@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #92ccdd;
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #5f7ed3;
+}
+
+
+.navbar a:hover {
+    background-color: #c0bdbd;
+    color: black;
+}
+
+.navbar a {
+    text-decoration: none;
+    float: left;
+    display: block;
+    color: #0c0c0c;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+form {
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 8px;
+    border: 3px solid #ccc;
+    border-radius: 3px;
+}
+
+#pupilgender,
+#classid {
+    width: 100%;
+}
+
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0e5812;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2; 
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; 
+}
+
+tr:hover {
+    background-color: #afa9a9; 
+}

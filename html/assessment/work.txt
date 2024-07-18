@@ -1,0 +1,66 @@
+// here are my sql queries samples
+
+CREATE TABLE `pupils` (
+  `pupilid` int(11) NOT NULL AUTO_INCREMENT,
+  `pupilname` varchar(80) NOT NULL,
+  `pupiladdress` varchar(255) NOT NULL,
+  `pupilgender` varchar(60) NOT NULL,
+  `pupilphonenumber` varchar(15) DEFAULT NULL,
+  `medicalinfo` text DEFAULT NULL,
+  `classid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`pupilid`)
+);
+
+CREATE TABLE `pupilparents` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `pupilid` int(11) NOT NULL,
+  `parentid` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `pupilid` (`pupilid`),
+  KEY `parentid` (`parentid`),
+  CONSTRAINT `fk_pupil_id` FOREIGN KEY (`pupilid`) REFERENCES `pupils` (`pupilid`),
+  CONSTRAINT `fk_parent_id` FOREIGN KEY (`parentid`) REFERENCES `parents` (`parentid`)
+);
+
+CREATE TABLE `parents` (
+  `parentid` int(11) NOT NULL AUTO_INCREMENT,
+  `parentname` varchar(100) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `emailadd` varchar(100) DEFAULT NULL,
+  `phonenumber` varchar(15) DEFAULT NULL,
+  `parentname2optional` varchar(100) DEFAULT NULL,
+  `parent2address` varchar(255) DEFAULT NULL,
+  `parent2emailadd` varchar(100) DEFAULT NULL,
+  `parent2phonenumber` varchar(15) DEFAULT NULL,
+  PRIMARY KEY (`parentid`)
+);
+
+CREATE TABLE `schoolteachers` (
+  `teacherid` int(11) NOT NULL AUTO_INCREMENT,
+  `teachername` varchar(80) NOT NULL,
+  `teacheraddress` varchar(255) NOT NULL,
+  `teacherphonenumber` varchar(15) DEFAULT NULL,
+  `annualsalary` decimal(10,2) DEFAULT NULL,
+  `background` tinyint(1) DEFAULT NULL,
+  `classid` int(11) DEFAULT NULL,
+  PRIMARY KEY (`teacherid`)
+);
+
+CREATE TABLE `schoolclasses` (
+  `classid` int(11) NOT NULL AUTO_INCREMENT,
+  `classname` varchar(60) NOT NULL,
+  `classcapacity` int(11) NOT NULL,
+  PRIMARY KEY (`classid`)
+);
+
+-- Insert example data into school classes
+INSERT INTO `schoolclasses` (`classname`, `classcapacity`) VALUES
+('Reception Year', 25),
+('Year One', 25),
+('Year Two', 25),
+('Year Three', 25),
+('Year Four', 25),
+('Year Five', 25),
+('Year Six', 25);
+
+
